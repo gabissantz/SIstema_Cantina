@@ -1,94 +1,50 @@
 #include <stdio.h>
 
-void novo_pedido(void);
-void calculadora(void);
-void simular_desconto(void);
-void mostrar_relatorio(void);
+int totalPedidos = 0;
+int totalItens = 0;
 
-int main(void) {
-	int opcao;
+float faturamentoBruto = 0.0;
+float descontos = 0.0;
+float faturamentoFinalS = 0.0;
 
+int main() {
+   int opcaoMenu;
 
-	do {
-		printf("\n---- Salvatore ----\n");
-		printf("1. Novo Pedido\n");
-		printf("2. Calculadora\n");
-		printf("3. Simular Desconto\n");
-		printf("4. Mostrar Relatorio\n");
-		printf("0. Sair\n");
-		printf("Escolha uma opcao: ");
-		scanf("%d", &opcao);
+   do{
 
-		if (opcao == 1) {
-			novo_pedido();
-		}
-		else if (opcao == 2) {
-			calculadora();
-		}
-		else if (opcao == 3) {
-			simular_desconto();
-		}
-		else if (opcao == 4) {
-			mostrar_relatorio();
-		}
-		else if (opcao == 0) {
-			printf("Saindo do programa...\n");
-		}
-		else {
-			printf("Opção inválida. Tente novamente.\n");
-		}
-	} while (opcao != 0);
+    printf("\n-------------------------------------\n");
+    printf("    ˑ 𐔌 Cantina - WHAT YOU WANT?   ͡꒱ ۫  \n");
+    printf("----------------------------------------\n");
 
-	return 0;
-}
+        printf("1 - FAZER PEDIDO <3\n");
+        printf("2 - CALCULADORA RAPIDA\n");
+        printf("3 - SIMULAR DESCONTO -_-\n");
+        printf("4 - RELATORIO DA SESSAO\n");
+        printf("0 - SAIR \n");
+        printf("----------------------------------\n");
+        printf("Escolha uma opcao: :)");
+        scanf("%d", &opcaoMenu);
 
+        switch (opcaoMenu) {
+            case 1:
+                printf("\n[ Modulo Novo Pedido]\n");
+                break;
+            case 2:
+                printf("\n[ Calculadora Rapida]\n");
+                break;
+            case 3:
+                printf("\n[Simular Desconto]\n");
+                break;
+            case 4:
+                printf("\n[] Relatorio da Sessao]\n");
+                break;
+            case 0:
+                printf("\nSaindo do programa... bye bye!\n");
+                break;
+            default:
+                printf("\nOpcao invalida! Digite um numero de 0 a 4.\n");
+        }
 
+    } while (opcaoMenu != 0); // Repete enquanto NAO for 0
 
-void novo_pedido(void) {
-	int opcao_produto;
-	int quantidade;
-	float preco_unitario = 0.0;
-	float total_pedido = 0.0;
-
-	printf("\n--- CARDAPIO ---\n");
-	printf("1. Hamburguer - R$ 15.00\n");
-	printf("2. Batata Frita - R$ 10.00\n");
-	printf("3. Refrigerante - R$ 5.00\n");
-	printf("Escolha o produto (1 a 3): ");
-	scanf("%d", &opcao_produto);
-
-	switch (opcao_produto) {
-	case 1:
-		preco_unitario = 15.00;
-		break;
-	case 2:
-		preco_unitario = 10.00;
-		break;
-	case 3:
-		preco_unitario = 5.00;
-		break;
-	default:
-		printf("Opcao de produto invalida!\n");
-		return;
-	}
-
-	printf("Digite a quantidade que deseja: ");
-	scanf("%d", &quantidade);
-
-	total_pedido = preco_unitario * quantidade;
-
-	printf("\nPedido realizado com sucesso!\n");
-	printf("Valor total a pagar: R$ %.2f\n", total_pedido);
-}
-
-void calculadora(void) {
-	printf("[Sistema]: Calculadora ainda nao implementada.\n");
-}
-
-void simular_desconto(void) {
-	printf("[Sistema]: Simulador de desconto ainda nao implementado.\n");
-}
-
-void mostrar_relatorio(void) {
-	printf("[Sistema]: Relatorio ainda nao implementado.\n");
-}
+   }
